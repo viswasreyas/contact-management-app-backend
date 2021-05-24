@@ -25,7 +25,7 @@ public class RegisterService {
         Optional<Register> registerOptional = registerRepository
                 .findRegisterByName(register.getUsername());
         if(registerOptional.isPresent()){
-            throw new IllegalStateException("email taken");
+            throw new IllegalStateException("username taken");
         }
         registerRepository.save(register);
     }
